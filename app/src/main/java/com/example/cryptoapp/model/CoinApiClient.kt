@@ -1,5 +1,7 @@
 package com.example.cryptoapp.model
 
-class CoinApiClient: Singleton() {
-    fun getCoinApiClient(): CoinApiService = retrofit.create(CoinApiService::class.java)
+import com.example.cryptoapp.model.Singleton.Companion.getInstanceRetrofit
+
+class CoinApiClient {
+    fun getCoinApiClient(): CoinApiService = getInstanceRetrofit().create(CoinApiService::class.java)
 }
