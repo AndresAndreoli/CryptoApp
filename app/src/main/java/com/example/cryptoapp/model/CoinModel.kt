@@ -3,11 +3,11 @@ package com.example.cryptoapp.model
 import com.google.gson.annotations.SerializedName
 
 data class CoinModel(
-    val status: Status,
+    val status: StatusCoin,
     val data: ArrayList<Data> = arrayListOf()
 )
 
-data class Status (
+data class StatusCoin (
     @SerializedName("timestamp"     ) var timestamp    : String? = null,
     @SerializedName("error_code"    ) var errorCode    : Int?    = null,
     @SerializedName("error_message" ) var errorMessage : String? = null,

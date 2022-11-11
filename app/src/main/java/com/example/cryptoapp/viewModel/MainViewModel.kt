@@ -3,8 +3,10 @@ package com.example.cryptoapp.viewModel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.cryptoapp.model.CoinApiClient
+import com.example.cryptoapp.model.CoinDetailsModel
 import com.example.cryptoapp.model.CoinModel
 import com.google.gson.Gson
+import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -17,10 +19,10 @@ class MainViewModel: ViewModel() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 
-        observable.subscribe(getObserver())
+        observable.subscribe(getObserverCoin())
     }
 
-    private fun getObserver(): Observer<Response<CoinModel>>{
+    private fun getObserverCoin(): Observer<Response<CoinModel>>{
         return object : Observer<Response<CoinModel>>{
             override fun onNext(response: Response<CoinModel>) {
                 Log.d("mainViewModel", "Response: ${response.body()}")
@@ -35,6 +37,36 @@ class MainViewModel: ViewModel() {
             }
 
             override fun onSubscribe(d: Disposable) { }
+        }
+    }
+
+    fun getCoinById(id: Int){
+        val observable = CoinApiClient().getCoinApiClient().getCoinById(id)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+
+        observable.subscribe(getObserverCoinDetails())
+    }
+
+    // TODO: HACER FUNCION GENERICA
+    fun getObserverCoinDetails(): Observer<Response<CoinDetailsModel>>{
+        return object : Observer<Response<CoinDetailsModel>>{
+            override fun onSubscribe(d: Disposable) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onError(e: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onComplete() {
+                TODO("Not yet implemented")
+            }
+
+            override fun onNext(t: Response<CoinDetailsModel>) {
+                TODO("Not yet implemented")
+            }
+
         }
     }
 }
