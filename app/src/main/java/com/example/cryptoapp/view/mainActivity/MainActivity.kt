@@ -17,6 +17,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Testing coin request (this will be remove in the future)
-        viewModel.getCoinById(2)
+        //viewModel.getCoinById(2)
     }
 }
