@@ -1,5 +1,7 @@
 package com.example.cryptoapp.model
 
+import android.content.Context
+import android.content.SharedPreferences
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
