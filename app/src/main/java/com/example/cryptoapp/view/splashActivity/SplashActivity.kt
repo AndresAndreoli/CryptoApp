@@ -27,6 +27,7 @@ class SplashActivity : BaseActivity() {
             else
                 // User doesn't keep your session open
                 startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }, 4000)
     }
 

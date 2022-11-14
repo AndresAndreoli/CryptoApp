@@ -2,22 +2,8 @@ package com.example.cryptoapp.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CoinModel(
-    val status: StatusCoin,
-    val data: ArrayList<Data> = arrayListOf()
-)
-
-data class StatusCoin (
-    @SerializedName("timestamp"     ) var timestamp    : String? = null,
-    @SerializedName("error_code"    ) var errorCode    : Int?    = null,
-    @SerializedName("error_message" ) var errorMessage : String? = null,
-    @SerializedName("elapsed"       ) var elapsed      : Int?    = null,
-    @SerializedName("credit_count"  ) var creditCount  : Int?    = null,
-    @SerializedName("notice"        ) var notice       : String? = null,
-    @SerializedName("total_count"   ) var totalCount   : Int?    = null
-)
-
-data class Data (
+// I know i should create individual classes for each model
+data class LatestCoin (
     @SerializedName("id"                               ) var id                            : Int?              = null,
     @SerializedName("name"                             ) var name                          : String?           = null,
     @SerializedName("symbol"                           ) var symbol                        : String?           = null,

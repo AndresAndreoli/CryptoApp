@@ -2,16 +2,8 @@ package com.example.cryptoapp.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CoinDetailsModel (
-    @SerializedName("status" ) var status : StatusDetailsCoin? = null,
-    @SerializedName("data"   ) var data   : DataDetailsCoin?   = null
-)
-
-data class DataDetailsCoin (
-    @SerializedName("2" ) var id : Details? = null
-)
-
-data class Details (
+// I know i should create individual classes for each model
+data class CoinDetails (
     @SerializedName("id"                               ) var id                            : Int?                       = null,
     @SerializedName("name"                             ) var name                          : String?                    = null,
     @SerializedName("symbol"                           ) var symbol                        : String?                    = null,
@@ -32,15 +24,6 @@ data class Details (
     @SerializedName("self_reported_market_cap"         ) var selfReportedMarketCap         : String?                    = null
 )
 
-data class StatusDetailsCoin (
-    @SerializedName("timestamp"     ) var timestamp    : String? = null,
-    @SerializedName("error_code"    ) var errorCode    : Int?    = null,
-    @SerializedName("error_message" ) var errorMessage : String? = null,
-    @SerializedName("elapsed"       ) var elapsed      : Int?    = null,
-    @SerializedName("credit_count"  ) var creditCount  : Int?    = null,
-    @SerializedName("notice"        ) var notice       : String? = null
-)
-
 data class Urls (
     @SerializedName("website"       ) var website      : ArrayList<String> = arrayListOf(),
     @SerializedName("twitter"       ) var twitter      : ArrayList<String> = arrayListOf(),
@@ -53,12 +36,3 @@ data class Urls (
     @SerializedName("source_code"   ) var sourceCode   : ArrayList<String> = arrayListOf(),
     @SerializedName("announcement"  ) var announcement : ArrayList<String> = arrayListOf()
 )
-
-data class Coin (
-    @SerializedName("id"     ) var id     : String? = null,
-    @SerializedName("name"   ) var name   : String? = null,
-    @SerializedName("symbol" ) var symbol : String? = null,
-    @SerializedName("slug"   ) var slug   : String? = null
-)
-
-

@@ -1,3 +1,24 @@
 <resources>
+    <!-- LoginActivity -->
+    <string name="credentialsIncorrect">Your username or password is incorrect</string>
+    <string name="emptyFields">Complete both fields</string>
+
+    <!-- MainActivity -->
+    <string name="title_log_out">Log Out</string>
+    <string name="log_out">Do you want to log out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- LoginActivity Layout -->
+    <string name="title_login">CryptoApp</string>
+    <string name="usarname">Username</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Don\'t have an account?</string>
+    <string name="sign_up_here">Sign Up here</string>
+
+    <!-- SplashActivity Layout -->
     <string name="app_name">CryptoApp</string>
 </resources>

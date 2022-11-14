@@ -2,9 +2,7 @@ package com.example.cryptoapp.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.example.cryptoapp.model.CoinApiClient
-import com.example.cryptoapp.model.CoinDetailsModel
-import com.example.cryptoapp.model.CoinModel
+import com.example.cryptoapp.model.*
 import com.google.gson.Gson
 import io.reactivex.Observable
 import io.reactivex.Observer
@@ -15,16 +13,24 @@ import retrofit2.Response
 
 class MainViewModel: ViewModel() {
     fun getLatestCoins(){
-        val observable = CoinApiClient().getCoinApiClient().getLastestCoins()
+        val observable = CoinApiClient().getCoinApiClient().getLatestCoins()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 
-        observable.subscribe(getObserverCoin())
+        observable.subscribe(getObserverLatestCoin())
     }
 
-    private fun getObserverCoin(): Observer<Response<CoinModel>>{
-        return object : Observer<Response<CoinModel>>{
-            override fun onNext(response: Response<CoinModel>) {
+    fun getCoinById(id: Int){
+        val observable = CoinApiClient().getCoinApiClient().getCoinById(id)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+
+        observable.subscribe(getObserverCoinDetails())
+    }
+
+    private fun getObserverLatestCoin(): Observer<Response<BaseResponse<List<LatestCoin>>>>{
+        return object : Observer<Response<BaseResponse<List<LatestCoin>>>>{
+            override fun onNext(response: Response<BaseResponse<List<LatestCoin>>>) {
                 Log.d("mainViewModel", "Response: ${response.body()}")
             }
 
@@ -40,33 +46,21 @@ class MainViewModel: ViewModel() {
         }
     }
 
-    fun getCoinById(id: Int){
-        val observable = CoinApiClient().getCoinApiClient().getCoinById(id)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-
-        observable.subscribe(getObserverCoinDetails())
-    }
-
-    // TODO: HACER FUNCION GENERICA
-    fun getObserverCoinDetails(): Observer<Response<CoinDetailsModel>>{
-        return object : Observer<Response<CoinDetailsModel>>{
-            override fun onSubscribe(d: Disposable) {
-                TODO("Not yet implemented")
-            }
+    private fun getObserverCoinDetails(): Observer<Response<BaseResponse<Map<Int, CoinDetails?>>>>{
+        return object : Observer<Response<BaseResponse<Map<Int, CoinDetails?>>>>{
+            override fun onSubscribe(d: Disposable) { }
 
             override fun onError(e: Throwable) {
-                TODO("Not yet implemented")
+                Log.d("mainViewModel", e.message ?: "Error request (Coin details)")
             }
 
             override fun onComplete() {
-                TODO("Not yet implemented")
+                Log.d("mainViewModel",  "Complete request (Coin details)")
             }
 
-            override fun onNext(t: Response<CoinDetailsModel>) {
-                TODO("Not yet implemented")
+            override fun onNext(response: Response<BaseResponse<Map<Int, CoinDetails?>>>) {
+                Log.d("mainViewModel", "Response: ${response.body()}")
             }
-
         }
     }
 }

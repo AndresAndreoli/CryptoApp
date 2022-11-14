@@ -1,14 +1,9 @@
 package com.example.cryptoapp.view.loginActivity
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import com.example.cryptoapp.R
 import com.example.cryptoapp.databinding.ActivityLoginBinding
-import com.example.cryptoapp.databinding.ActivityMainBinding
 import com.example.cryptoapp.view.BaseActivity
 import com.example.cryptoapp.view.mainActivity.MainActivity
 import com.google.android.material.snackbar.Snackbar
@@ -33,13 +28,16 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun loginUser(username: String, password: String){
-        if (username.isEmpty() && password.isEmpty())
-            showSnackBar("Complete both fields", resources.getColor(R.color.red))
-        else if (preferences.getString("username", "") == username && (preferences.getString("password", "") == password)){
+        if (username.isEmpty() || password.isEmpty())
+            // Show information message about empty fields
+            showSnackBar(resources.getString(R.string.emptyFields), resources.getColor(R.color.red))
+        else if (preferences.getString("username", "") != username || (preferences.getString("password", "") != password)){
+            // Show information message about incorrect credentials
+            showSnackBar(resources.getString(R.string.credentialsIncorrect), resources.getColor(R.color.red))
+        } else {
             preferences.edit().putBoolean("keepCredentials", binding.cbRemember.isChecked).apply()
             startActivity(Intent(this, MainActivity::class.java))
-        } else {
-            showSnackBar("Your username or password is incorrect", resources.getColor(R.color.red))
+            finish()
         }
     }
 
