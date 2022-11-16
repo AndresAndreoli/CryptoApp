@@ -12,7 +12,6 @@ data class CoinEntity(
     val slug: String?,
     val numMarketPairs: Int?,
     val dateAdded: String?,
-    val tags: ArrayList<String>,
     val maxSupply: Long?,
     val totalSupply: Float?,
     val lastUpdated: String?
