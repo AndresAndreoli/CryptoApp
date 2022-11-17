@@ -14,7 +14,6 @@ data class LatestCoin (
     @SerializedName("max_supply"                       ) var maxSupply                     : Long?             = null,
     @SerializedName("total_supply"                     ) var totalSupply                   : Float?            = null,
     @SerializedName("last_updated"                     ) var lastUpdated                   : String?           = null,
-    @SerializedName("quote"                            ) var quote                         : Quote?            = Quote()
 )
 
 data class USD (

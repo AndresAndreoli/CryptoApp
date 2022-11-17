@@ -1,7 +1,5 @@
-package com.example.cryptoapp.model
+package com.example.cryptoapp.model.network
 
-import android.content.Context
-import android.content.SharedPreferences
 import com.example.cryptoapp.Utils.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -25,4 +23,5 @@ class Singleton {
             }
         }
     }
+
 }
