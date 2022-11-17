@@ -11,7 +11,6 @@ interface CoinDAOs {
     @Query("SELECT * FROM latest_coin_table")
     fun getLatestCoin(): List<CoinEntity>
 
-    // OnConflictStrategy.REPLACE = If there's already another element with the same primary key, the new element will replace the old one
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCoinToDB(coin: CoinEntity)
 }
