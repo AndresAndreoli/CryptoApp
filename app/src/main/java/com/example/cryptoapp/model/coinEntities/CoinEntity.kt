@@ -14,5 +14,6 @@ data class CoinEntity(
     val dateAdded: String?,
     val maxSupply: Long?,
     val totalSupply: Float?,
-    val lastUpdated: String?
+    val lastUpdated: String?,
+    val price: Double?
 )

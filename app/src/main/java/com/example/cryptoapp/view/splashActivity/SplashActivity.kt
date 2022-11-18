@@ -10,6 +10,7 @@ import com.example.cryptoapp.R
 import com.example.cryptoapp.view.BaseActivity
 import com.example.cryptoapp.view.loginActivity.LoginActivity
 import com.example.cryptoapp.view.mainActivity.MainActivity
+import java.util.*
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : BaseActivity() {
@@ -32,11 +33,12 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun saveCredentialsOnPreferences(){
-        val editor = preferences.edit()
         if (credentialsIsEmpty()){
+            val editor = preferences.edit()
             editor.putString("username", "andres")
             editor.putString("password", "andreoli")
             editor.putBoolean("keepCredentials", false)
+            editor.putLong("lastUpdate", 0)
             editor.apply()
         }
     }
