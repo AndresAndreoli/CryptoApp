@@ -1,4 +1,4 @@
-package com.example.cryptoapp.Utils
+package com.example.cryptoapp.utils
 
 const val API_KEY = "dd36ae30-4298-4e69-8a04-e1abb148a5c8"
 const val BASE_URL = "https://pro-api.coinmarketcap.com/"

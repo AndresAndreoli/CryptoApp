@@ -1,6 +1,6 @@
 package com.example.cryptoapp.model.network
 
-import com.example.cryptoapp.Utils.BASE_URL
+import com.example.cryptoapp.utils.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
