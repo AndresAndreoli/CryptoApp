@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.mainActivity.MainActivity">
+    tools:context=".view.mainActivity.MainActivity"
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLatestCoins"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue_dark"/>
+        app:navGraph="@navigation/nav_graph"/>
 </LinearLayout>
 
 

@@ -37,6 +37,8 @@ class MainActivity : BaseActivity() {
 
         initComponents()
         initHomeRecyclerView()
+
+
     }
 
     private fun initComponents() {
