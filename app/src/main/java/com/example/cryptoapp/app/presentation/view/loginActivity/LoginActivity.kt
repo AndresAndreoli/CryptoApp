@@ -1,11 +1,11 @@
-package com.example.cryptoapp.view.loginActivity
+package com.example.cryptoapp.app.presentation.view.loginActivity
 
 import android.content.Intent
 import android.os.Bundle
 import com.example.cryptoapp.R
 import com.example.cryptoapp.databinding.ActivityLoginBinding
-import com.example.cryptoapp.view.BaseActivity
-import com.example.cryptoapp.view.mainActivity.MainActivity
+import com.example.cryptoapp.app.presentation.view.BaseActivity
+import com.example.cryptoapp.app.presentation.view.mainActivity.MainActivity
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : BaseActivity() {

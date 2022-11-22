@@ -1,4 +1,4 @@
-package com.example.cryptoapp.view.splashActivity
+package com.example.cryptoapp.app.presentation.view.splashActivity
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,9 +7,9 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cryptoapp.R
-import com.example.cryptoapp.view.BaseActivity
-import com.example.cryptoapp.view.loginActivity.LoginActivity
-import com.example.cryptoapp.view.mainActivity.MainActivity
+import com.example.cryptoapp.app.presentation.view.BaseActivity
+import com.example.cryptoapp.app.presentation.view.loginActivity.LoginActivity
+import com.example.cryptoapp.app.presentation.view.mainActivity.MainActivity
 import java.util.*
 
 @SuppressLint("CustomSplashScreen")

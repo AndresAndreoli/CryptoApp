@@ -1,4 +1,4 @@
-package com.example.cryptoapp.model.coinEntities
+package com.example.cryptoapp.app.framework.db.coinEntities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

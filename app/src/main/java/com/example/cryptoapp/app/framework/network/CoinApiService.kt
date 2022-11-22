@@ -1,4 +1,4 @@
-package com.example.cryptoapp.model.network
+package com.example.cryptoapp.app.framework.network
 
 import com.example.cryptoapp.utils.API_KEY
 import com.example.cryptoapp.utils.END_POINT_DETAILS_COIN

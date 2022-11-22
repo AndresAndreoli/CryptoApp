@@ -1,4 +1,4 @@
-package com.example.cryptoapp.view
+package com.example.cryptoapp.app.presentation.view
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.cryptoapp.utils.DATA_BASE_NAME
 import com.example.cryptoapp.utils.SHARED_PREFERENCES_NAME
-import com.example.cryptoapp.model.dataBase.CoinDataBase
-import com.example.cryptoapp.model.network.CoinApiClient
-import com.example.cryptoapp.model.network.CoinApiService
+import com.example.cryptoapp.app.framework.db.CoinDataBase
+import com.example.cryptoapp.app.framework.network.CoinApiClient
+import com.example.cryptoapp.app.framework.network.CoinApiService
 
 open class BaseActivity: AppCompatActivity() {
     protected val preferences: SharedPreferences by lazy{

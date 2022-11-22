@@ -16,7 +16,7 @@
         android:theme="@style/Theme.CryptoApp"
         tools:targetApi="31">
         <activity
-            android:name=".view.loginActivity.LoginActivity"
+            android:name=".app.presentation.view.loginActivity.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait">
             <meta-data
@@ -24,7 +24,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".view.splashActivity.SplashActivity"
+            android:name=".app.presentation.view.splashActivity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +35,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".view.mainActivity.MainActivity"
+            android:name=".app.presentation.view.mainActivity.MainActivity"
             android:exported="true">
 
             <meta-data

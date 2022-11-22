@@ -1,4 +1,4 @@
-package com.example.cryptoapp.view.mainActivity.adapter
+package com.example.cryptoapp.app.presentation.view.mainActivity.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cryptoapp.R
 import com.example.cryptoapp.databinding.ItemCoinBinding
 import com.example.cryptoapp.model.CoinModel
-import com.example.cryptoapp.model.coinEntities.CoinEntity
+import com.example.cryptoapp.app.framework.db.coinEntities.CoinEntity
 import java.text.DecimalFormat
 
 class CoinAdapter(var coins: List<CoinEntity>): RecyclerView.Adapter<CoinViewHolder>() {

@@ -1,7 +1,7 @@
 package com.example.cryptoapp.utils
 
 import com.example.cryptoapp.model.CoinModel
-import com.example.cryptoapp.model.coinEntities.CoinEntity
+import com.example.cryptoapp.app.framework.db.coinEntities.CoinEntity
 
 // This will let me convert LatestCoin type data to CoinModel type data
 fun CoinModel.toDataBase() =

@@ -1,10 +1,10 @@
-package com.example.cryptoapp.model.dataBase
+package com.example.cryptoapp.app.framework.db
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.cryptoapp.model.coinEntities.CoinEntity
+import com.example.cryptoapp.app.framework.db.coinEntities.CoinEntity
 
 @Dao
 interface CoinDAOs {

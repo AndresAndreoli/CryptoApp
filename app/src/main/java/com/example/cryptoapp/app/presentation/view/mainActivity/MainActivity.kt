@@ -1,4 +1,4 @@
-package com.example.cryptoapp.view.mainActivity
+package com.example.cryptoapp.app.presentation.view.mainActivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cryptoapp.R
 import com.example.cryptoapp.databinding.ActivityMainBinding
 import com.example.cryptoapp.model.CoinModel
-import com.example.cryptoapp.model.coinEntities.CoinEntity
+import com.example.cryptoapp.app.framework.db.coinEntities.CoinEntity
 import com.example.cryptoapp.utils.Utilities.Companion.checkConnectionInternet
 import com.example.cryptoapp.utils.toDataBase
-import com.example.cryptoapp.view.BaseActivity
-import com.example.cryptoapp.view.loginActivity.LoginActivity
-import com.example.cryptoapp.view.mainActivity.adapter.CoinAdapter
+import com.example.cryptoapp.app.presentation.view.BaseActivity
+import com.example.cryptoapp.app.presentation.view.loginActivity.LoginActivity
+import com.example.cryptoapp.app.presentation.view.mainActivity.adapter.CoinAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -68,7 +68,7 @@ class MainActivity : BaseActivity() {
 
     private fun getLatestCoinsFromDB() = getInstanceRoom().getCoinDao().getLatestCoin()
 
-    private suspend fun getLatestCoinsFromNetwork() =
+    private suspend fun apigetLatestCoinsFromNetwork() =
         getAPIService().getLatestCoins().body()?.data?.map { it.toDataBase() } ?: emptyList()
 
     // This function check time elapsed since last DB update. If it's above 40', I will update the DB
