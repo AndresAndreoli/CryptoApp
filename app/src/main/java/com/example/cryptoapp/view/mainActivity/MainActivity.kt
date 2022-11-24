@@ -42,7 +42,9 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initComponents() {
-        coinAdapter = CoinAdapter(latestCoinList)
+        coinAdapter = CoinAdapter(latestCoinList){ coin, price, supply->
+            openCoinDescriptionActivity(coin, price, supply)
+        }
         binding.rvLatestCoins.adapter = coinAdapter
         binding.rvLatestCoins.layoutManager = LinearLayoutManager(this)
     }
@@ -113,5 +115,13 @@ class MainActivity : BaseActivity() {
         editor.putBoolean("keepCredentials", false).apply()
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
+    }
+
+    private fun openCoinDescriptionActivity(coin: Int, price: Double, supply: Long){
+        val intent = Intent(this, CoinDescriptionActivity::class.java)
+        intent.putExtra("coinID", coin)
+        intent.putExtra("price", price)
+        intent.putExtra("supply", supply)
+        startActivity(Intent(intent))
     }
 }

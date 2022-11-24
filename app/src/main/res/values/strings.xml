@@ -21,6 +21,14 @@
 
     <!-- SplashActivity Layout -->
     <string name="app_name">CryptoApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Coin Description Layout -->
+    <string name="load_content">Load content</string>
+    <string name="description">Description</string>
+    <string name="information">Information</string>
+    <string name="symbol">Symbol</string>
+    <string name="website">WebSite</string>
+    <string name="date_added">Date added</string>
+    <string name="price">Price</string>
+    <string name="supply">Supply</string>
 </resources>

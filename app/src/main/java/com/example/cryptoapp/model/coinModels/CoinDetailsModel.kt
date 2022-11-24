@@ -18,10 +18,7 @@ data class CoinDetails (
     @SerializedName("date_added"                       ) var dateAdded                     : String?                    = null,
     @SerializedName("twitter_username"                 ) var twitterUsername               : String?                    = null,
     @SerializedName("is_hidden"                        ) var isHidden                      : Int?                       = null,
-    @SerializedName("date_launched"                    ) var dateLaunched                  : String?                    = null,
-    @SerializedName("self_reported_circulating_supply" ) var selfReportedCirculatingSupply : String?                    = null,
-    @SerializedName("self_reported_tags"               ) var selfReportedTags              : String?                    = null,
-    @SerializedName("self_reported_market_cap"         ) var selfReportedMarketCap         : String?                    = null
+    @SerializedName("date_launched"                    ) var dateLaunched                  : String?                     = null
 )
 
 data class Urls (
